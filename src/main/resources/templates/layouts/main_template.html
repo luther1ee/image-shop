@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Common</title>
+</head>
+<body>
+    <div th:replace="~{fragments/header::header}"></div>
+    <hr>
+    <div th:replace="~{fragments/menu::menu}"></div>
+    <hr>
+    <div align="center" layout:fragment="content">
+
+    </div>
+    <hr>
+    <div th:replace="~{fragments/footer::footer}"></div>
+    <hr>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layouts/main_template}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>CodeGroup</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <h2>코드 수정</h2>
+    <form id="codeGroup" action="list.html">
+        <table>
+            <tr>
+                <td>그룹코드</td>
+                <td>
+                    <select name="groupCode">
+                        <option>hobby</option>
+                    </select>
+                </td>
+                <td><span class="error_message">groupName의 에러 메시지</span></td>
+            </tr>
+            <tr>
+                <td>코드값</td>
+                <td><input type="text" name="codeValue" /></td>
+                <td><span class="error_message">코드값의 에러 메시지</span></td>
+            </tr>
+            <tr>
+                <td>코드명</td>
+                <td><input type="text" name="codeName" /></td>
+                <td><span class="error_message">코드명의 에러 메시지</span></td>
+            </tr>
+        </table>
+    </form>
+    <div>
+        <button type="submit" id="btnModify">수정</button>
+        <button type="submit" id="btnList">목록</button>
+    </div>
+    <script>
+            var formObj = document.querySelector("#codeGroup")
+
+            document.querySelector("#btnModify").addEventListener("click", function () {
+	            formObj.submit()
+            })
+
+            document.querySelector("#btnList").addEventListener("click", function () {
+	            self.location = "list";
+            })
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layouts/main_template}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>CodeDetail</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <h2>코드 등록</h2>
+
+    <form id="codeDetail" action="list.html">
+        <table>
+            <tr>
+                <td>코드그룹</td>
+                <td>
+                    <select id="codeGroup" name="codeGroup">
+                        <option value="hobby" text="hobby">hobby</option>
+                    </select>
+                </td>
+                <td>
+                    <span class="error_message">groupCode의 에러 메시지</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>코드값</td>
+                <td><input type="text" name="codeValue" /></td>
+                <td><span class="error_message">codeValue의 에러 메시지</span></td>
+            </tr>
+            <tr>
+                <td>코드명</td>
+                <td><input type="text" name="codeName" /></td>
+                <td><span class="error_message">codeName의 에러 메시지</span></td>
+            </tr>
+        </table>
+    </form>
+    <div>
+        <button type="submit" id="btnRegister">등록</button>
+        <button type="submit" id="btnList">목록</button>
+    </div>
+    <script>
+            var formObj = document.querySelector("#codeDetail")
+
+            document.querySelector("#btnRegister").addEventListener("click", function () {
+	            formObj.submit()
+            })
+
+            document.querySelector("#btnList").addEventListener("click", function () {
+                self.location = "list";
+            })
+
+    </script>
+</div>
+</body>
+</html>

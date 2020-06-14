@@ -1,0 +1,15 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layouts/main_template}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>home</title>
+    <link rel="stylesheet" href=".././static/css/style.css" th:href="@{/css/style.css}"  />
+</head>
+<body>
+    <div layout:fragment="content">
+        <h1 th:text="#{common.homeWelcome}"></h1>
+        <p th:text="${serverTime}" >시간 표시</p>
+    </div>
+</body>
+</html>
